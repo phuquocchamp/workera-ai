@@ -1,0 +1,10 @@
+FROM pgvector/pgvector:pg18
+
+# ENV for PostgresSQL
+ENV POSTGRES_USER=superuser
+ENV POSTGRES_PASSWORD=secret_password
+ENV POSTGRES_DB=workera_db
+
+EXPOSE 5432
+
+CMD ["postgres"]
