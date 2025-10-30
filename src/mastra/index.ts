@@ -4,8 +4,7 @@ import { Mastra } from '@mastra/core/mastra';
 import { PinoLogger } from '@mastra/loggers';
 import { PostgresStore } from '@mastra/pg';
 import { jobDescriptionAnalyzerAgent } from './agents/employer/job-description-analyzer-agent';
-
-
+import { interviewSchedulerAgent } from './agents/employer/interview-scheduler-agent';
 
 
 // Initialize Vector Database
@@ -16,7 +15,7 @@ const pgStorage = new PostgresStore({
 
 export const mastra = new Mastra({
   workflows: {  },
-  agents: { jobDescriptionAnalyzerAgent },
+  agents: { jobDescriptionAnalyzerAgent, interviewSchedulerAgent },
   storage: pgStorage,
   logger: new PinoLogger({
     name: 'Mastra',
